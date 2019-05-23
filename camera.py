@@ -282,7 +282,7 @@ def CapturePicture():
 	for x in range(3, -1, -1):
                 if x == 0:                        
                         Numeral = ""
-                        Message = "PRENEZ LA POSE"
+                        Message = "Get ready!"
                 else:                        
                         Numeral = str(x)
                         Message = ""                
@@ -368,6 +368,12 @@ def TakePictures():
                                 conn = cups.Connection()
                                 # get a list of printers
                                 printers = conn.getPrinters()
+				if len(printers.keys()) == 0:
+					Message = "Printer not available"
+                        		Numeral = ""
+                        		UpdateDisplay()
+                        		time.sleep(1)
+					return
                                 # select printer 0
                                 printer_name = printers.keys()[0]
                                 Message = "Printing in progress..."
