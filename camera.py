@@ -29,8 +29,8 @@ Printing = False
 BUTTON_PIN = 25
 #IMAGE_WIDTH = 558
 #IMAGE_HEIGHT = 374
-IMAGE_WIDTH = 550
-IMAGE_HEIGHT = 360
+IMAGE_WIDTH = 1100
+IMAGE_HEIGHT = 720
 
 
 # Load the background template
@@ -319,17 +319,17 @@ def TakePictures():
 	global TotalImageCount
 
         input(pygame.event.get())
-        CountDownPhoto = "1/3"        
+        CountDownPhoto = "1 of 3"        
         filename1 = CapturePicture()
 
-        CountDownPhoto = "2/3"
+        CountDownPhoto = "2 of 3"
         filename2 = CapturePicture()
 
-        CountDownPhoto = "3/3"
+        CountDownPhoto = "Last one!"
         filename3 = CapturePicture()
 
         CountDownPhoto = ""
-        Message = "Please wait..."
+        Message = "Saving..."
         UpdateDisplay()
 
         image1 = PIL.Image.open(filename1)
@@ -458,7 +458,7 @@ def main(threadName, *args):
     while True:
         #show_image('images/start_camera.jpg')
 	camera.start_preview()
-	BackgroundColor = "black"
+	backgroundPicture.fill((0, 0, 0))
 	Message = ""
         UpdateDisplay()
 	
