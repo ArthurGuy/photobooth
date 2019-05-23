@@ -456,10 +456,12 @@ def WaitForEvent():
 def main(threadName, *args):
     InitFolder()
     while True:
-            show_image('images/start_camera.jpg')
-            WaitForEvent()
-            time.sleep(0.2)
-            TakePictures()
+        #show_image('images/start_camera.jpg')
+	camera.start_preview()
+        WaitForEvent()
+	camera.stop_preview()
+        time.sleep(0.2)
+        TakePictures()
     GPIO.cleanup()
 
 
