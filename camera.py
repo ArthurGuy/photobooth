@@ -282,7 +282,7 @@ def CapturePicture():
 	for x in range(3, -1, -1):
                 if x == 0:                        
                         Numeral = ""
-                        Message = "Get ready!"
+                        Message = "Smile!"
                 else:                        
                         Numeral = str(x)
                         Message = ""                
@@ -458,6 +458,10 @@ def main(threadName, *args):
     while True:
         #show_image('images/start_camera.jpg')
 	camera.start_preview()
+	BackgroundColor = "black"
+	Message = ""
+        UpdateDisplay()
+	
         WaitForEvent()
 	camera.stop_preview()
         time.sleep(0.2)
